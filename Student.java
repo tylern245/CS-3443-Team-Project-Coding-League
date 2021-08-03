@@ -2,10 +2,11 @@ package application;
 
 import java.util.*;
 
+
 /**
  * The Semester class will represent a Course object.
  * This class contains information about the student's 
- * total credit hours, cumulative GPA, along with every semester of the student
+ * total credit hours and cumulative GPA, along with all the student's courses
  * @author Tyler Nguyen
  * @author Gabby Mapa
  * @author Emily Nguyen
@@ -14,20 +15,19 @@ import java.util.*;
 
 public class Student 
 {
-	private ArrayList<Semester> semesters;
+	private ArrayList<Course> courses;
 	private int totalCreditHours;
 	private double cumulativeGPA;
 	private double totalPoints;
 
 	public Student() 
 	{
-		semesters = new ArrayList<Semester>();
+		courses = new ArrayList<Course>();
 	}
 	
-	
-	public void addSemester(Semester mySemester)
+	public void addCourse(Course myCourse)
 	{
-		semesters.add(mySemester);
+		courses.add(myCourse);
 	}
 	
 	public void calculateCumulativeGPA()
@@ -37,14 +37,17 @@ public class Student
 		this.totalCreditHours = 0;
 		
 		// formula
-		// cumulativeGPA	= (semesterGPA * semester credit hours) / totalCredits
+		// cumulativeGPA	= (courseGPA * course credit hours) / totalCredits
 		//					= totalPoints / totalCreditHours
 
 		// find the total points and total credit hours for student's lifetime
-		for (int i = 0; i < semesters.size(); i++)
+		for (int i = 0; i < courses.size(); i++)
 		{
-			this.totalPoints += ( semesters.get(i).getSemesterGPA() * semesters.get(i).getCreditHours() );
-			this.totalCreditHours += semesters.get(i).getCreditHours();
+//			this.totalPoints += ( semesters.get(i).getSemesterGPA() * semesters.get(i).getCreditHours() );
+//			this.totalCreditHours += semesters.get(i).getCreditHours();
+			
+			this.totalPoints += ( courses.get(i).getGradePoints() * courses.get(i).getCreditHours() );
+			this.totalCreditHours += courses.get(i).getCreditHours();
 		}
 		
 		// calculate cumulative GPA
@@ -67,9 +70,10 @@ public class Student
 		return totalPoints;
 	}
 	
-	public ArrayList<Semester> getSemesters() {
-		return semesters;
+	public ArrayList<Course> getCourses()	{
+		return courses;
 	}
+	
 	
 	public void setCumulativeGPA(double cumulativeGPA) {
 		this.cumulativeGPA = cumulativeGPA;
@@ -83,7 +87,7 @@ public class Student
 		this.totalPoints = totalPoints;
 	}
 	
-	public void setSemesters(ArrayList<Semester> semesters) {
-		this.semesters = semesters;
+	public void setCourses(ArrayList<Course> courses)	{
+		this.courses = courses;
 	}
 }

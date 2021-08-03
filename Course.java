@@ -1,7 +1,5 @@
 package application;
 
-//import java.util.*;
-
 /**
  * The Course class will represent a Course object.
  * Each Course objects contains information about each course:
@@ -19,26 +17,15 @@ public class Course
 	private String letterGrade;
 	private double gradePoints;
 	
-	public Course(String courseName, int creditHours, String letterGrade) 
+	public Course(String courseName) 
 	{
 		this.courseName = courseName;
-		this.creditHours = creditHours;
-		this.letterGrade = letterGrade;
+		creditHours = 0;
+		letterGrade = "";
+		gradePoints = 0.0;
 	}
 	
-	public String getCourseName() {
-		return courseName;
-	}
-	
-	public int getCreditHours() {
-		return creditHours;
-	}
-	
-	public String getLetterGrade()	{
-		return letterGrade;
-	}
-	
-	public double getGradePoints()
+	public void letterGradeToGradePoints()
 	{
 		// determine grade points based on letter grade
 		switch (letterGrade)
@@ -72,8 +59,25 @@ public class Course
 				break;
 
 		}
+	}
+	
+	public String getCourseName() {
+		return courseName;
+	}
+	
+	public int getCreditHours() {
+		return creditHours;
+	}
+	
+	public String getLetterGrade()	{
+		return letterGrade;
+	}
+	
+	public double getGradePoints()	{
 		return gradePoints;
 	}
+	
+
 	
 	public void setCourseName(String courseName)	{
 		this.courseName = courseName;
