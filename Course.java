@@ -8,7 +8,7 @@ package application;
  * @author Gabby Mapa
  * @author Emily Nguyen
  *
- * testing
+ * testing changes in github
  */
 
 public class Course 
