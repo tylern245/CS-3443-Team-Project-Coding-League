@@ -1,7 +1,8 @@
 # CS-3443-Team-Project-Coding-League
 
 
------------------------- GPA CALCULATOR ------------------------
+------------------------ 
+GPA CALCULATOR
 
 ------------------------
 DESCRIPTION
