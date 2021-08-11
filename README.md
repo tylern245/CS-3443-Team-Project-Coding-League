@@ -54,5 +54,7 @@ Knowing how each individual course grade is going to help or hurt you is importa
 CREDITS
 -----------------------
 Project Leader: Tyler Nguyen
+
 Gabby Mapa
+
 Emily Nguyen
